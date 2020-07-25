@@ -20,14 +20,6 @@ class MainWidgetState extends State<MainWidget> {
   String result = "";
   Color mainColor = Colors.white;
 
-  String punctuation() {
-    var comma = ", ";
-    if (result != "") {
-      return result = comma + result;
-    }
-    return result;
-  }
-
   String greeting() {
     var hour = DateTime.now().hour;
     if (hour < 12) {
@@ -61,7 +53,7 @@ class MainWidgetState extends State<MainWidget> {
                 controller: controller,
               ),
               Center(
-                child: Text('Good ' + greeting() + punctuation(),
+                child: Text('Good ' + greeting() + " $result",
                     style: TextStyle(fontSize: 32.0)),
               ),
               Listener(
